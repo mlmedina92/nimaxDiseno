@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description"
+          content="Nimax es una empresa de la ciudad de Tandil, dedicada a la venta, instalación y mantenimiento en piletas de fibra. Convertite en distribuidor de piletas. ">
+        <meta name="keywords"
+          content="contacto de nimax,  piletas, piscinas, instalación, mantenimiento, Tandil, fabrica de piletas de fibra de vidrio, venta directa de fabrica. Venta e instalación de equipos de filtrado, iluminacion, climatizadores, accesorios relacionados con las piletas de fibra">
+        <meta name="author" content="Lis Medina">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./fotosnimax/favicon.png">
+        <!-- Google fonts -->
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"
+          rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900" rel="stylesheet"
+          type="text/css">
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
+          rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/main.css">
+        <title>Nimax Piletas | productos </title>
+      </head>
+      
+      <body>
+        <header id="header" class="sticky-top">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <!-- Logo -->
+              <a class="text-reset" href="./index.html" class="navbar-brand" title="Nimax">
+                <img src="./img/logo.jpg" alt="Nimax" style="max-width: 100px;" /></a>
+      
+              <!-- Menú mobile -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <!-- Links menú pcipal -->
+              <div class="navbar-collapse justify-content-end collapse" id="navbarToggler">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="text-reset nav-link" href="./index.html#nosotros">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="text-reset nav-link" href="./index.html#galeria">Galería</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="text-reset nav-link" href="./index.html#distribuidores">Distribuidores</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="text-reset nav-link" href="./index.html#contacto">Contacto</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="text-reset nav-link dropdown-toggle" href="./productos.html#menuDesplegable"
+                      id="menuDesplegable" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Productos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="menuDesplegable">
+                      <!-- Pasamos por parametro la categoria que queremos levantar los datos desde los jsons -->
+                      <li><a class="text-reset dropdown-item" href="./productos.html?categoria=piletas">Piletas</a></li>
+                      <li><a class="text-reset dropdown-item" href="./productos.html?categoria=accesorios">Accesorios
+                          estéticos y funcionales</a></li>
+                      <li><a class="text-reset dropdown-item" href="./productos.html?categoria=limpieza">Accesorios de
+                          limpieza</a></li>
+                      <li><a class="text-reset dropdown-item" href="./productos.html?categoria=equipos">Equipos</a></li>
+                      <li><a class="text-reset dropdown-item" href="./productos.html?categoria=revestimiento">Revestimiento
+                          atérmico</a>
+                      </li>
+                      <li><a class="text-reset dropdown-item" href="./productos.html?categoria=mantenimiento">Mantenimiento
+                          del agua</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <!-- Carrito con modal -->
+                    <button type="button" class="btn btn-demo" data-bs-toggle="modal" data-bs-target="#carrito">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+      
+      
+
+    <!-- Modal del carrito -->
+    <div class="modal right fade" id="carrito" tabindex="-1" role="dialog" aria-labelledby="carrito">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="carrito">Carrito</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="pedido">
+                        <!-- El Contenido se carga por JS -->
+                        <p>El carrito está vacío</p>
+                    </div>
+                    <div id="total">
+                        <!-- El Contenido se carga por JS -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Finalizar compra</button>
+                </div>
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div><!-- modal -->
+
+        <main>
+        <div class="container">
+            <h1 id="titulo" class="mt-4 mb-3">SOMOS VERANO</h1>
+            <div id="productos" class="productos card-group gap-3 mb-4 contenedor-productos">
+                <!-- Las cards serán cargadas por JS -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="pt-4 px-20 py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-2 col-1">
+              <a class="text-decoration-none" href="./index.html" title="Nimax piletas">
+                <img src="./img/logo.jpg" alt="Nimax piletas" style="max-width: 100px;">
+              </a>
+            </div>
+            <div class="col-12 col-md-3">
+              <ul class="list-unstyled">
+                <li class="pb-2"><a class="text-decoration-none" href="./index.html#nosotros">Nosotros</a></li>
+                <li class="pb-2"><a class="text-decoration-none" href="./index.html#distribuidor">Distribuidores</a></li>
+                <li class="pb-2"><a class="text-decoration-none" href="./index.html#galeria">Galería</a></li>
+                <li class="pb-2"><a class="text-decoration-none" href="./index.html##contacto">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-4">
+              <ul class="list-unstyled">
+                <li>
+                  <p class="texto-footer">Teléfono</p>
+                  <a class="text-decoration-none" href="tel:2494026594" title="Administración">
+                    <i class="fab fa-whatsapp"></i>
+                    <p>2494026594</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="text-decoration-none" href="https://goo.gl/maps/EXswAuif3Q6bjLet6">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Colectora Pugliese Esquina Pozos</p>
+                    <p>Tandil (7000), Buenos Aires, Arg.</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3">
+              <p class="texto-footer">Seguinos en las redes</p>
+              <ul class="list-unstyled d-inline-flex">
+                <li class="mx-1">
+                  <a href="https://www.youtube.com/channel/UCbtI5mxax1HJuMPHhrPr7Kg" target="_blank" class="fb"><i
+                      class="fa-brands fa-youtube"></i></a>
+                </li>
+                <li class="mx-1">
+                  <a class="text-decoration-none" target="_blank"
+                    href="https://www.facebook.com/search/top?q=nimax%20piletas" target="_blank" class="fb"><i
+                      class="fa fa-facebook"></i></a>
+                  </a>
+                </li>
+                <li class="mx-1">
+                  <a class="text-decoration-none" target="_blank" href="https://www.instagram.com/nimaxpiletas/"
+                    target="_blank" class="be"><i class="fa fa-instagram"></i></a>
+                </li>
+    
+                </a>
+                </li>
+                <li class="mx-1">
+                  <a class="text-decoration-none" target="_blank" href="mailto:@gmail.com" title="E-mail">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+      <div class="container-fluid copyright px-2 py-3">
+        <div class="container">
+          <p class="text-center mb-0">Copyright © | Todos los derechos reservados 2022. Nimax Piletas Tandil | <a href="https://www.linkedin.com/in/lis-medina
+            " target="_blank" class="text-decoration-none">Hecho por Lis Medina</a></p>
+        </div>
+      </div>
+    
+          <a class="text-reset fixed-btn" target="_blank" href="https://web.whatsapp.com/send?phone=+549496102"><i
+          class="fab fa-whatsapp"></i></a>
+
+
+    <!-- Links scripts -->
+    <script src="./js/pedido.js" type="module"></script>
+    <script src="./js/productos.js" type="module"></script>
+<!-- Link sweat alert  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/8fce408b6e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

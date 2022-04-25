@@ -1,0 +1,6 @@
+#con una barra al final indico que es una carpeta
+node_modules/
+.vscode/
+readme.txt
+package-lock.json
+
