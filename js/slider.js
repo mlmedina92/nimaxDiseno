@@ -1,4 +1,6 @@
 // funcion de carrusel jqery
+
+
 $(".slider-for").slick({
     slidesToShow: 1,
     arrows: false,

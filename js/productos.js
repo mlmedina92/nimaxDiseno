@@ -60,7 +60,6 @@ let productos = [
     "../img/dos.jpg"
   ),
 ];
-
 //Función que me lista los elementos del div con id productos
 function listarProductos() {
   let contenedorProductos = document.getElementById("productos");
@@ -81,12 +80,11 @@ function listarProductos() {
                                           </div>
                                         </div>`;
   });
-
   //Segundo for each para vincular eventos al htlm generado arriba:
   //Le paso cada producto creado (objeto) como parámetro  y selecciono el elemento boton
   productos.forEach((producto) => {
     //desestructuracion de objetos: desafio:
-    let {id,nombre} = producto;
+    let { id, nombre } = producto;
     let btnAgregar = document.getElementById(`btn-agregar-${id}`);
     btnAgregar.addEventListener("click", () => {
       // Cada vez que se hace clik en el boton, se agrega AL PEDIDO carrito un nuevo objeto del tipo ItemPedido
