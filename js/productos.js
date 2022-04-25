@@ -66,17 +66,19 @@ function listarProductos() {
   //Primer for each para crear elementos html (cards que muestran cada producto)
   //Le paso cada producto creado (objeto) como parámetro
   productos.forEach((producto) => {
+    let { imagen, fabricante, precio, id, nombre,descripcion } = producto;
     //+= es para concatenar al contenido de contenerdorProductos con cada card
+    // desdestructuracion-desafio:
     contenedorProductos.innerHTML += `<div class="card border rounded overflow-hidden">
-                                          <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                                          <img src="${imagen}" class="card-img-top" alt="${nombre}">
                                           <div class="card-body">
-                                            <h5 class="card-title">${producto.nombre}</h5>
-                                            <p class="card-text"><small>${producto.fabricante}</small></p>
-                                            <p class="card-text">${producto.descripcion}</p>
-                                            <p class="card-text">$${producto.precio}</p>
+                                            <h5 class="card-title">${nombre}</h5>
+                                            <p class="card-text"><small>${fabricante}</small></p>
+                                            <p class="card-text">${descripcion}</p>
+                                            <p class="card-text">$${precio}</p>
                                             <label for="quantity">Cantidad</label>
-                                            <input type="number" id="cantidad-${producto.id}" name="quantity" min="1" value="1">
-                                                <a href="#" id="btn-agregar-${producto.id}" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i></a>
+                                            <input type="number" id="cantidad-${id}" name="quantity" min="1" value="1">
+                                                <a href="#" id="btn-agregar-${id}" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i></a>
                                           </div>
                                         </div>`;
   });
@@ -99,6 +101,5 @@ function listarProductos() {
     });
   });
 }
-
 //interaccion con el usuario :
 listarProductos();
