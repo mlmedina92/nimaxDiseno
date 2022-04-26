@@ -68,7 +68,7 @@ function listarProductos() {
   productos.forEach((producto) => {
     let { imagen, fabricante, precio, id, nombre,descripcion } = producto;
     //+= es para concatenar al contenido de contenerdorProductos con cada card
-    // desdestructuracion-desafio:
+    // Desestructuracion-desafio:
     contenedorProductos.innerHTML += `<div class="card border rounded overflow-hidden">
                                           <img src="${imagen}" class="card-img-top" alt="${nombre}">
                                           <div class="card-body">
@@ -85,7 +85,7 @@ function listarProductos() {
   //Segundo for each para vincular eventos al htlm generado arriba:
   //Le paso cada producto creado (objeto) como parámetro  y selecciono el elemento boton
   productos.forEach((producto) => {
-    //desestructuracion de objetos: desafio:
+    //desestructuracion de objetos- desafio:
     let { id, nombre } = producto;
     let btnAgregar = document.getElementById(`btn-agregar-${id}`);
     btnAgregar.addEventListener("click", () => {
