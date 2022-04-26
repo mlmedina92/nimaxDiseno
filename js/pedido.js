@@ -38,7 +38,7 @@ function refrescarCarrito() {
                     <div class="col-2 text-end px-0 mx-0">
                       <button id="btn-eliminar-${
                         itemPedido.producto.id
-                      }" class="btn-danger"><i class=" fas fa-trash-alt"></i></button>
+                      }" class="btn"><i class=" fas fa-trash-alt"></i></button>
                     </div>  
                   </div>
                   <div class="row">
@@ -58,28 +58,26 @@ function refrescarCarrito() {
     total += itemPedido.obtenerSubtotal();
   });
 
-  // pedido.forEach(function (itemPedido) {
-  //   let btnEliminar = document.getElementById(`btn-eliminar-${producto.id}`);
-  //   Defino evento para eliminar producto :
-  //   btnEliminar.addEventListener('click', ()=>{
-  //     Swal.fire({
-  //       title: 'Estás seguro de eliminar este producto?',
-  //       icon: 'warning',
-  //       showCancelButton: true,
-  //       confirmButtonColor: '#3085d6',
-  //       cancelButtonColor: '#d33',
-  //       confirmButtonText: 'Yes, delete it!'
-  //     }).then((result) => {
-  //       if (result.isConfirmed) {
-  //         eliminarProducto(ItemPedidoproductoid);
-  //         Swal.fire(
-  //           'Tu producto fue eliminado con éxito',
-  //           'success'
-  //         )
-  //       }
-  //     });
-  //   });
-  // });
+  pedido.forEach(function (itemPedido) {
+    let btnEliminar = document.getElementById(`btn-eliminar-${itemPedido.producto.id}`);
+    // Defino evento para eliminar producto :
+    btnEliminar.addEventListener('click', ()=>{
+      Swal.fire({
+        title: `Estás seguro de quitar ${itemPedido.producto.nombre}?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          eliminarProducto(itemPedido.producto.id);
+          Swal.fire('Tu producto fue eliminado con éxito');
+        }
+      });
+    });
+  });
 
   let totalhtml = document.getElementById("total");
   totalhtml.innerHTML = `<p class="text-end px-0 mx-0 fs-4  text">TOTAL $<strong>${total}</strong></p>`;
@@ -88,16 +86,24 @@ function refrescarCarrito() {
 // Funcion guardar pedido en localstorage: covierte el pedido en string -
 //Guarda pedidos que es un areglo de objetos en carrito
 function guardarPedido(producto, cantidad) {
-  pedido.push(new ItemPedido(producto, cantidad));
+  let itemPedido = pedido.find(item => item.producto.id == producto.id);
+  // si itempedido es != a undefined. si ya existe, le sumas la cantidad solicitada:
+   if (itemPedido){
+     itemPedido.cantidad += cantidad;
+   } else { //sino existe lo creas:
+     itemPedido = new ItemPedido(producto, cantidad);
+     pedido.push(itemPedido);
+    }
   localStorage.setItem("pedido", JSON.stringify(pedido));
   refrescarCarrito();
 }
 
 //  Funcion para eliminar producto:
-// function eliminarProducto(id) {
-//  pedido=  pedido.filter((item)  => item.id != `"btn-eliminar-"${itemPedido.producto.id}`);
-//   localStorage.setItem("pedido", JSON.stringify(pedido));
-//  }
+function eliminarProducto(id) {
+  pedido=  pedido.filter((item)  => item.producto.id != id);
+  localStorage.setItem("pedido", JSON.stringify(pedido));
+  refrescarCarrito();
+}
 
 //Funcion cargar pedido desde lo que guarde en el local storage
 function cargarPedido() {
@@ -119,7 +125,7 @@ cargarPedido();
 export { guardarPedido };
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  swal({
+  Swal.fire({
     title: "Hola",
     text: "Bienvenido",
     confirm: "ok",

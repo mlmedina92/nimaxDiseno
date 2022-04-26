@@ -91,9 +91,9 @@ function listarProductos() {
     btnAgregar.addEventListener("click", () => {
       // Cada vez que se hace clik en el boton, se agrega AL PEDIDO carrito un nuevo objeto del tipo ItemPedido
       let cantidad = document.getElementById(`cantidad-${id}`);
-      guardarPedido(producto, cantidad.value);
-      swal({
-        text: `'El producto ${nombre} se añadó con éxito',`,
+      guardarPedido(producto, parseInt(cantidad.value));
+      Swal.fire({
+        text: `El producto ${nombre} se añadió con éxito`,
         icon: "success",
         confirm: "ok",
         timer: 4000,
