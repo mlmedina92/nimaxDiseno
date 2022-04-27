@@ -3,11 +3,10 @@ import { guardarPedido } from "./pedido.js";
 //Clase: molde de objetos
 class Producto {
   //Función constructora de objeto (producto):
-  constructor(id, nombre, descripcion, fabricante, precio, imagen) {
+  constructor(id, nombre, descripcion, precio, imagen) {
     this.id = id;
     this.nombre = nombre;
     this.descripcion = descripcion;
-    this.fabricante = fabricante;
     this.precio = precio;
     this.imagen = imagen;
   }
@@ -23,9 +22,6 @@ class Producto {
       "Descripción: " +
       this.descripcion +
       "\n" +
-      "Fabricante: " +
-      this.fabricante +
-      "\n" +
       "Precio: $" +
       this.precio
     );
@@ -36,44 +32,89 @@ class Producto {
 //No guardo los objetos en una variable, los creo y los guardo en una posición del arreglo
 let productos = [
   new Producto(
-    "p1",
-    "Producto Nº1",
-    "Descripción producto Nº1",
-    "Fabricante 1",
+  "p1",
+    "Bombas para pisicinas",
+ "Disponibles en una gran variedad de modelos. Desarrolladas y fabricadas con materiales de excelente calidad, en sus diferentes versiones estas bombas de agua fueron diseñadas para brindar la mejor relación presión-caudal del mercado, con el mejor rendimiento energético.",
     123,
-    "../img/dos.jpg"
+    "../img/products/bombas.jpg"
   ),
   new Producto(
     "p2",
-    "Producto Nº2",
-    "Descripción producto Nº2",
-    "Fabricante 2",
+    "Equipos de filtración",
+    "Los filtros de arena de cuarzo para piscinas tienen la funcionalidad de tratar físicamente el agua, eliminando las impurezas que se encuentran en la misma. La gran variedad de modelos, permite adaptación a todo tipo de piscinas.",
     123,
-    "../img/dos.jpg"
+    "../img/products/filtracion.jpg"
   ),
   new Producto(
-    "p3",
-    "Producto Nº3",
-    "Descripción producto Nº3",
-    "Fabricante 3",
+  "p3",
+    "Accesorios de instalación",
+    "Esta categoría agrupa todos los accesorios Vulcano, desarrollados para la instalación hidráulica de su piscina. Ponemos a su disposición la amplia variedad de productos Vulcano, que brindan distintas opciones ajustables a todo tipo de proyecto.",
     123,
-    "../img/dos.jpg"
+    "../img/products/instalacion.jpg"
   ),
-];
+  new Producto(
+  "p4",
+    "Decoración y confort",
+    "En esta categoría encontramos productos que por su funcionalidad agregan confort a la hora del baño, como así también aquellos destinados a realzar y destacar el atractivo de la piscina.",
+    123,
+    "../img/products/decoracion.jpg"
+  ),
+  new Producto(
+  "p5",
+    "iluminación",
+    "La gran variedad de luminarias para piscina Vulcano, para iluminación subacuática, ha sido desarrollada para realzar la belleza y extender el uso en horarios nocturnos para todo tipo de piscinas. De construcción hermética, y fabricadas con materiales de excelente calidad, tienen una prolongada vida útil.",
+    123,
+    "../img/products/iluminacion.jpg"
+  ),
+  new Producto(
+  "p6",
+    "Automatización de piscinas",
+    "La tecnología de automatización de piscinas Vulcano está desarrollada para el accionamiento remoto de filtros, salidas auxiliares, luminarias y calefacción.",
+    123,
+    "../img/products/automatizacion.jpg"
+  ),
+  new Producto(
+  "p7", 
+    "Mantenimeinto y limpieza",
+    "Esta categoría agrupa todos los productos Vulcano, destinados al cuidado e higiene del agua su piscina. Un amplio catálogo de productos, permite adaptarse a las necesidades puntuales de cada piscina para obtener un agua limpia y cristalina todo el año.",
+    123,
+    "../img/products/mantenimiento.jpg",
+  ),
+new Producto(
+  "p8",
+    "Equipos de desinfeccion",
+    "Los equipos de desinfección de piscinas de Vulcano le permitirán mantener el agua en óptimas condiciones a través de la eliminación de microorganismos resistentes a otros procesos químicos con efectos antiicrustantes, alguicidas, bacteriostáticos y estabilizadores de pH.",
+    123,
+    "../img/products/decoracion.jpg",
+),
+new Producto(
+  "p9",
+    "Productos químicos",
+    "La línea de productos químicos Vulcor® de Vulcano, ha sido desarrollada para el tratamiento y mantenimiento del agua de piscina. La completa variedad de productos y presentaciones Vulclor, permite adaptarse a todo tipo de necesidades, que bajo correctas condiciones de uso, resulta en un agua limpia y cristalina para el disfrute de los bañistas.",
+    123,
+    "../img/products/quimicos.jpg",
+  ),
+  new Producto(
+  "p10",
+    "Climaticación de piletas",
+    "Productos Vulcano utilizados para calefaccionar y medir la temperatura del agua de piscina.",
+    123,
+    "../img/products/climatizacion.jpg"
+  ),
+]
 //Función que me lista los elementos del div con id productos
 function listarProductos() {
   let contenedorProductos = document.getElementById("productos");
   //Primer for each para crear elementos html (cards que muestran cada producto)
   //Le paso cada producto creado (objeto) como parámetro
   productos.forEach((producto) => {
-    let { imagen, fabricante, precio, id, nombre,descripcion } = producto;
+    let { imagen, precio, id, nombre,descripcion } = producto;
     //+= es para concatenar al contenido de contenerdorProductos con cada card
     // Desestructuracion-desafio:
     contenedorProductos.innerHTML += `<div class="card border rounded overflow-hidden">
                                           <img src="${imagen}" class="card-img-top" alt="${nombre}">
                                           <div class="card-body">
                                             <h5 class="card-title">${nombre}</h5>
-                                            <p class="card-text"><small>${fabricante}</small></p>
                                             <p class="card-text">${descripcion}</p>
                                             <p class="card-text">$${precio}</p>
                                             <label for="quantity">Cantidad</label>

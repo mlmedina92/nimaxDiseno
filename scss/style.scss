@@ -149,6 +149,7 @@ textarea {
 
 .productos .card {
   transition: 0.4s ease-out;
+  min-width: 175px;
   &:hover {
     box-shadow: 0px 7px 10px rgba(black, 0.5);
   }
