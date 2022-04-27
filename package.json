@@ -1,7 +1,7 @@
 {
   "name": "nimaxdiseno",
   "version": "1.0.0",
-  "description": "",
+  "description": "SASS  es un procesador de codigo css---->me permite importar hojas de estilo scss a css\r es una manera de escribir css, yo escribo en SCSS y se pasa por medio de un\r procesador a CSS quedando un codigo mas limpio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,5 +13,14 @@
   "devDependencies": {
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlmedina92/nimaxDiseno.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlmedina92/nimaxDiseno/issues"
+  },
+  "homepage": "https://github.com/mlmedina92/nimaxDiseno#readme",
+  "dependencies": {}
 }

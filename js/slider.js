@@ -10,7 +10,7 @@ $(".slider-for").slick({
   $(".slider-nav").slick({
     arrows: true,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     asNavFor: ".slider-for",
     dots: true,
     centerPadding: '40px',

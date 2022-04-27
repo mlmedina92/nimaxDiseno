@@ -60,6 +60,10 @@ textarea {
   left: auto;
   right: 0; }
 
+.modal-active {
+  opacity: 1;
+  visibility: hidden; }
+
 .distribuidores {
   background: #1f4e8c;
   background: linear-gradient(0deg, #1f4e8c 0%, #2983a6 100%);

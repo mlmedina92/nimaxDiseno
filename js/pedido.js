@@ -124,11 +124,13 @@ cargarPedido();
 
 export { guardarPedido };
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  Swal.fire({
-    title: "Hola",
-    text: "Bienvenido",
-    confirm: "ok",
-    timer: 3000,
-  });
-});
+//CERRAR CARRITO
+const cerrarCarrito = document.getElementById('btn-cerrar-carrito');
+const modalContenedor = document.querySelector('.modal');
+
+cerrarCarrito.addEventListener('click', () => {
+  //  tiene la clase modal-active toggle la saaca la hace invisible 
+  myModal.handleUpdate()
+})
+
+
