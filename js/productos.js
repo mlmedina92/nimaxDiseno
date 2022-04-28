@@ -113,13 +113,19 @@ function listarProductos() {
     // Desestructuracion-desafio:
     contenedorProductos.innerHTML += `<div class="card border rounded overflow-hidden">
                                           <img src="${imagen}" class="card-img-top" alt="${nombre}">
-                                          <div class="card-body">
+                                          <div class="card-body d-flex flex-column d-flex justify-content-between">
                                             <h5 class="card-title">${nombre}</h5>
                                             <p class="card-text">${descripcion}</p>
                                             <p class="card-text">$${precio}</p>
-                                            <label for="quantity">Cantidad</label>
-                                            <input type="number" id="cantidad-${id}" name="quantity" min="1" value="1">
-                                                <a href="#" id="btn-agregar-${id}" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i></a>
+                                            <div class="row mb-2 d-flex justify-content-between"
+                                              <div class="row">
+                                                <label for="quantity">Cantidad</label>
+                                              </div>
+                                              <div>
+                                              <input type="number" id="cantidad-${id}  name="quantity" min="1" value="1" class="rounded col-3">
+                                                  <a href="#" id="btn-agregar-${id}" class="btn btn-primary col-8"><i class="fa-solid fa-cart-shopping"></i></a>
+                                              </div>
+                                            </div> 
                                           </div>
                                         </div>`;
   });
