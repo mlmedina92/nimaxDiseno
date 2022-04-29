@@ -58,6 +58,7 @@ function refrescarCarrito() {
     total += itemPedido.obtenerSubtotal();
   });
 
+
   pedido.forEach(function (itemPedido) {
     let btnEliminar = document.getElementById(`btn-eliminar-${itemPedido.producto.id}`);
     // Defino evento para eliminar producto :
@@ -83,6 +84,20 @@ function refrescarCarrito() {
   totalhtml.innerHTML = `<p class="text-end px-0 mx-0 fs-4  text">TOTAL $<strong>${total}</strong></p>`;
 }
 
+
+// evitar num neg:
+// const input = document.getElementById('cantidad-${id}');
+
+// const check = () => {
+//   if (!input.validity.valid) input.value = 0;
+//   if (+input.value < 0) input.value = 0;
+// };
+
+// input.addEventListener('input', check);
+// input.addEventListener('blur', check);
+
+
+
 // Funcion guardar pedido en localstorage: covierte el pedido en string -
 //Guarda pedidos que es un areglo de objetos en carrito
 function guardarPedido(producto, cantidad) {
@@ -97,6 +112,8 @@ function guardarPedido(producto, cantidad) {
   localStorage.setItem("pedido", JSON.stringify(pedido));
   refrescarCarrito();
 }
+
+
 
 //  Funcion para eliminar producto:
 function eliminarProducto(id) {
