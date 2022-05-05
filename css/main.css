@@ -37,12 +37,6 @@ header,
 footer {
   background-color: #F2F2F2; }
 
-input,
-textarea {
-  line-height: 24px;
-  border-radius: 2px;
-  border-width: 1px; }
-
 .btn-primary {
   background-color: #2983A6;
   border-color: #2983A6; }
@@ -83,7 +77,8 @@ textarea {
   border-radius: 50%;
   text-align: center;
   box-shadow: 0 0 4px 0 black;
-  transition: all 300ms; }
+  transition: all 300ms;
+  z-index: 1; }
   .fixed-btn i {
     color: #F2F2F2;
     line-height: 38px; }
@@ -110,6 +105,9 @@ textarea {
 
 .productos .card {
   transition: 0.4s ease-out;
-  min-width: 175px; }
+  height: 100%; }
   .productos .card:hover {
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5); }
+
+p.card-text {
+  font-size: 12px; }

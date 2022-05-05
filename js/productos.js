@@ -1,168 +1,43 @@
 import { guardarPedido } from "./pedido.js";
+import { getData } from "./getData.js";
 
-//Clase: molde de objetos
-class Producto {
-  //Función constructora de objeto (producto):
-  constructor(id, nombre, descripcion, precio, imagen) {
-    this.id = id;
-    this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.precio = precio;
-    this.imagen = imagen;
-  }
-  //Métodos de la clase:
-  obtenerDetalles() {
-    return (
-      "ID: " +
-      this.id +
-      "\n" +
-      "Nombre: " +
-      this.nombre +
-      "\n" +
-      "Descripción: " +
-      this.descripcion +
-      "\n" +
-      "Precio: $" +
-      this.precio
-    );
-  }
-}
-
-//Instanciación del ARREGLO de objetos.
-//No guardo los objetos en una variable, los creo y los guardo en una posición del arreglo
-let productos = [
-new Producto(
-    "p1",
-    "recto",
-    "4.00 x 2.60 x 1.10 <br> 5.00 x 2.70 x 1.30<br> 6.00 x 2.80 x 1.30<br> 6.50 x 3.00 x 1.30<br> 7-00 x 3.10 x 1.30<br><br> 6.00 x 2.80 x 1.40<br> 7.50 x 3.40 x 1.40<br> 8.80 x 3.40 x 1.40" ,
-    123,
-    "../img/recto/RECTO.jpg"
-),
-new Producto(
-  "p2",
-    "playita",
-    "3.80 x 2.40 x 1.30<br> 4.80 x 2.60 x 1.30<br> 5.80 x 2.80 x 1.30<br> 6.50 x 3.00 x 1.35 a 1.70<br> 7.50 x 3.00 x 1.65",
-    123,
-    "../img/playita/PLAYITA.jpg"
- ),
-new Producto(
-  "p3",
-    "arco",
-    "9.70 x 3.50<br> con desnivel <br> Profundidad 1.20 a 1.90<br> descanso en parte trasera",
-    123,
-    "../img/arco/arcol.jpg"
-  ),
-new Producto(
-  "p4",
-    "mix",
-    "recto con playa húmeda u escalera de lateral a lateral <br> 7.80 x 3.40 x 1.40",
-    123,
-    "../img/mix/MIXTO.jpg"
-  ),
-new Producto(
-  "p5",
-    "xl",
-    "descanso en parte trasera",
-    123,
-    "../img/mix/MIXTO.jpg"
-  ),
-  new Producto(
-  "p6",
-    "Bombas para pisicinas",
- "Disponibles en una gran variedad de modelos. Desarrolladas y fabricadas con materiales de excelente calidad, en sus diferentes versiones estas bombas de agua fueron diseñadas para brindar la mejor relación presión-caudal del mercado, con el mejor rendimiento energético.",
-    123,
-    "../img/products/bombas.jpg"
-  ),
-  new Producto(
-    "p7",
-    "Equipos de filtración",
-    "Los filtros de arena de cuarzo para piscinas tienen la funcionalidad de tratar físicamente el agua, eliminando las impurezas que se encuentran en la misma. La gran variedad de modelos, permite adaptación a todo tipo de piscinas.",
-    123,
-    "../img/products/filtracion.jpg"
-  ),
-  new Producto(
-  "p8",
-    "Accesorios de instalación",
-    "Esta categoría agrupa todos los accesorios Vulcano, desarrollados para la instalación hidráulica de su piscina. Ponemos a su disposición la amplia variedad de productos Vulcano, que brindan distintas opciones ajustables a todo tipo de proyecto.",
-    123,
-    "../img/products/instalacion.jpg"
-  ),
-  new Producto(
-  "p9",
-    "Decoración y confort",
-    "En esta categoría encontramos productos que por su funcionalidad agregan confort a la hora del baño, como así también aquellos destinados a realzar y destacar el atractivo de la piscina.",
-    123,
-    "../img/products/decoracion.jpg"
-  ),
-  new Producto(
-  "p10",
-    "iluminación",
-    "La gran variedad de luminarias para piscina Vulcano, para iluminación subacuática, ha sido desarrollada para realzar la belleza y extender el uso en horarios nocturnos para todo tipo de piscinas. De construcción hermética, y fabricadas con materiales de excelente calidad, tienen una prolongada vida útil.",
-    123,
-    "../img/products/iluminacion.jpg"
-  ),
-  new Producto(
-  "p11",
-    "Automatización de piscinas",
-    "La tecnología de automatización de piscinas Vulcano está desarrollada para el accionamiento remoto de filtros, salidas auxiliares, luminarias y calefacción.",
-    123,
-    "../img/products/automatizacion.jpg"
-  ),
-  new Producto(
-  "p12", 
-    "Mantenimeinto y limpieza",
-    "Esta categoría agrupa todos los productos Vulcano, destinados al cuidado e higiene del agua su piscina. Un amplio catálogo de productos, permite adaptarse a las necesidades puntuales de cada piscina para obtener un agua limpia y cristalina todo el año.",
-    123,
-    "../img/products/mantenimiento.jpg",
-  ),
-new Producto(
-  "p13",
-    "Equipos de desinfeccion",
-    "Los equipos de desinfección de piscinas de Vulcano le permitirán mantener el agua en óptimas condiciones a través de la eliminación de microorganismos resistentes a otros procesos químicos con efectos antiicrustantes, alguicidas, bacteriostáticos y estabilizadores de pH.",
-    123,
-    "../img/products/decoracion.jpg",
-),
-new Producto(
-  "p14",
-    "Productos químicos",
-    "La línea de productos químicos Vulcor® de Vulcano, ha sido desarrollada para el tratamiento y mantenimiento del agua de piscina. La completa variedad de productos y presentaciones Vulclor, permite adaptarse a todo tipo de necesidades, que bajo correctas condiciones de uso, resulta en un agua limpia y cristalina para el disfrute de los bañistas.",
-    123,
-    "../img/products/quimicos.jpg",
-  ),
-  new Producto(
-  "p15",
-    "Climaticación de piletas",
-    "Productos Vulcano utilizados para calefaccionar y medir la temperatura del agua de piscina.",
-    123,
-    "../img/products/climatizacion.jpg"
-  ),
-]
 //Función que me lista los elementos del div con id productos
-function listarProductos() {
+async function listarProductos() {
   let contenedorProductos = document.getElementById("productos");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoriaParam = urlParams.get('categoria');
+
+  const productos = await getData(categoriaParam);
   //Primer for each para crear elementos html (cards que muestran cada producto)
   //Le paso cada producto creado (objeto) como parámetro
-  productos.forEach((producto) => {
+  productos.forEach(producto => {
     let { imagen, precio, id, nombre,descripcion } = producto;
     //+= es para concatenar al contenido de contenerdorProductos con cada card
-    // Desestructuracion-desafio:
-    contenedorProductos.innerHTML += `<div class="card border rounded overflow-hidden">
+    // Desestructuracion:
+    contenedorProductos.innerHTML += `<div class="col p-2 m-0">
+                                        <div class="card border rounded">
                                           <img src="${imagen}" class="card-img-top" alt="${nombre}">
-                                          <div class="card-body d-flex flex-column d-flex justify-content-between">
+                                          <div class="card-body">
                                             <h5 class="card-title">${nombre}</h5>
                                             <p class="card-text">${descripcion}</p>
-                                            <p class="card-text">$${precio}</p>
-                                            <div class="row mb-2 d-flex justify-content-between"
-                                              <div class="row">
-                                                <label for="quantity">Cantidad</label>
-                                              </div>
-                                              <div>
-                                              <input type="number" id="cantidad-${id}"  name="quantity" min="1" max="100" value="1" class="rounded col-3">
-                                                  <a href="#" id="btn-agregar-${id}" class="btn btn-primary col-8"><i class="fa-solid fa-cart-shopping"></i></a>
-                                              </div>
-                                            </div> 
                                           </div>
-                                        </div>`;
+                                            <div class="card-footer p-3">
+                                              <p class="card-text"><strong>$${precio}</strong></p>
+                                              <div class="container p-0">
+                                                <div class="row align-items-end">                                   
+                                                  <div class="col-4 pe-0">
+                                                    <label class="form-label" for="cantidad-${id}">Cant.</label>
+                                                    <input class="form-control" type="number" id="cantidad-${id}" name="quantity" min="1" max="100" value="1">
+                                                  </div>                           
+                                                  <div class="col-8">
+                                                    <a class="btn btn-primary w-100" href="#" id="btn-agregar-${id}"><i class="fa-solid fa-cart-shopping"></i> Cotizar</a>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>`;
                                        
   })
 
