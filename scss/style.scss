@@ -8,27 +8,18 @@
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Raleway", sans-serif;
-}
-
 h2 {
   text-transform: uppercase;
 }
 
 body {
   color: black;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 1.2;
   font-weight: normal;
   text-decoration: none;
   text-transform: none;
-  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -73,12 +64,16 @@ footer {
   right: 0;
 }
 
+.btn-cart {
+  font-weight: bold;
+}
+
 //Carrito:
 .modal-active {
   opacity: 1;
   visibility: hidden;
 }
-  
+
 //Nosotros
 .distribuidores {
   background: rgb(31, 78, 140);
@@ -125,9 +120,18 @@ footer {
   }
 }
 //Galería
-.slick-prev:before,
-.slick-next:before {
-  color: $azul-claro;
+.galeria {
+  .slick-slide {
+    padding: 10px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: $azul-claro;
+  }
 }
 // copyright;
 .copyright {

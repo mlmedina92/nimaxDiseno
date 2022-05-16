@@ -12,24 +12,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./fotosnimax/favicon.png">
   <!-- Google fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"
-    rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900" rel="stylesheet"
-    type="text/css">
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
-    rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Links slick galeria -->
+  <!-- Links slick galeria -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
     integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-  <title>Nimax Piletas </title>
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>Nimax Piletas</title>
 </head>
 
 <body>
@@ -58,7 +51,6 @@
             <li class="nav-item">
               <a class="text-reset nav-link" href="./index.html#galeria">Galería</a>
             </li>
-  
             <li class="nav-item">
               <a class="text-reset nav-link" href="./index.html#contacto">Contacto</a>
             </li>
@@ -73,9 +65,9 @@
                 <li><a class="text-reset dropdown-item" href="./productos.html?categoria=accesorios">Accesorios</a></li>
               </ul>
             </li>
-            <li>
-              <button type="button" class="btn btn-demo" data-bs-toggle="modal" data-bs-target="#carrito">
-                <i class="fa-solid fa-cart-shopping"></i>
+            <li class="nav-item">
+              <button type="button" class="btn btn-cart px-0 ps-lg-2" data-bs-toggle="modal" data-bs-target="#carrito">
+                <i class="fa-solid fa-cart-shopping"></i> <span id="contadorCarrito"></span><span class="d-lg-none"> CARRITO</span>
               </button>
             </li>
           </ul>
@@ -91,12 +83,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title" id="carrito">Carrito</h4>
+          <button type="button" class= "btn btn-link btn-sm btn-clear" id="btn-clear" aria-label="Vaciar carrito">Vaciar carrito</button>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
         <div class="modal-body">
           <div id="pedido">
             <p>El carrito está vacío</p>
-            <!-- El Contenido se carga por JS -->
+            <!-- El Contenido del carrito se carga por JS -->
           </div>
           <div id="total">
             <!-- El Contenido se carga por JS -->
@@ -142,7 +135,7 @@
             <p>Diez años de experiencia avalan nuestro trabajo.</p>
           </div>
           <div class="col-12 col-md-6">
-            <img class="w-100" src="./img/galery/08.jpg" alt="Pileta">
+            <img class="w-100" src="./img/galery/08.jpg" alt="Local de Nimax">
           </div>
         </div>
       </div>
@@ -154,7 +147,7 @@
           <div class="mb-3 mb-sm-0 col-12 col-md-6">
             <img class="w-100" src="./img/local.jpg" alt="equipo nimax">
           </div>
-          <div class="col-12 col-md-6 text-end">
+          <div class="col-12 col-md-6 py-3 text-end">
             <h5 class="mb-4 mb-sm-0">Formá parte de nuestro equipo.</h4>
               <h6>CONVERTITE EN DISTRIBUIDOR DE NIMAX PILETAS!
             </h5>
@@ -164,11 +157,10 @@
       </div>
     </section>
 
-    <section id="galeria" class="container mb-5">
+    <section id="galeria" class="container mb-5 galeria">
       <h2 class="mb-3">Galería</h2>
       <div class="row">
-       
-        <div class="slider-nav">
+        <div class="slider-nav px-1">
           <div>
             <img src="./img/galery/00.jpg" alt="piletas nimax">
           </div>
@@ -194,7 +186,7 @@
             <img src="./img/galery/24.jpg" alt="piletas nimax">
           </div>
           <div>
-            <img src="./img/galery/14.jpeg" alt="piletas nimax">
+            <img src="./img/galery/14.jpg" alt="piletas nimax">
           </div>
         </div>
       </div>
@@ -257,11 +249,13 @@
         <div class="col-12 col-md-4 mb-3">
           <ul class="list-unstyled">
             <li class="mb-3">
-              <a class="text-decoration-none" href="tel:2494544221" title="Administración"><i class="fa-solid fa-phone"></i>  Llamanos</a>
+              <a class="text-decoration-none" href="tel:2494544221" title="Administración"><i
+                  class="fa-solid fa-phone"></i> Llamanos</a>
             </li>
             <li>
               <a class="text-decoration-none" href="https://goo.gl/maps/EXswAuif3Q6bjLet6">
-                <i class="fas fa-map-marker-alt"></i> Colectora Pugliese 10. Esquina Pozos<br>Tandil (7000), Buenos Aires,
+                <i class="fas fa-map-marker-alt"></i> Colectora Pugliese 10. Esquina Pozos<br>Tandil (7000), Buenos
+                Aires,
                 Arg.</a>
             </li>
           </ul>
@@ -282,8 +276,8 @@
                   class="fa fa-instagram"></i></a>
             </li>
             <li>
-              <a class="text-decoration-none fs-5" target="_blank" href="mailto:nimaxpiletas@gmail.com" title="E-mail"><i
-                  class="fas fa-envelope"></i></a>
+              <a class="text-decoration-none fs-5" target="_blank" href="mailto:nimaxpiletas@gmail.com"
+                title="E-mail"><i class="fas fa-envelope"></i></a>
             </li>
           </ul>
         </div>
@@ -299,7 +293,7 @@
   </div>
 
 
-  <a class="text-reset fixed-btn" target="_blank" href="https://web.whatsapp.com/send?phone=+5492494544221"><i
+  <a class="text-reset fixed-btn" target="_blank" href="https://wa.me/5492494544221"><i
       class="fab fa-whatsapp"></i></a>
 
 
@@ -308,13 +302,13 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <!-- link carrusel galeria -->
+  <!-- link carrusel galeria -->
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   <!-- Links sweet alert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <!-- ver orden en que se cargan los links js -->
   <script src="./js/pedido.js" type="module"></script>
   <script src="./js/slider.js" type="module"></script>
   <script src="https://kit.fontawesome.com/8fce408b6e.js" crossorigin="anonymous"></script>
