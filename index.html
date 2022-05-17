@@ -67,7 +67,7 @@
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-cart px-0 ps-lg-2" data-bs-toggle="modal" data-bs-target="#carrito">
-                <i class="fa-solid fa-cart-shopping"></i> <span id="contadorCarrito"></span><span class="d-lg-none"> CARRITO</span>
+                <i class="fa-solid fa-cart-shopping"></i> <span id="contadorCarrito"></span><span class="d-lg-none"> PRESUPUESTO</span>
               </button>
             </li>
           </ul>
@@ -82,13 +82,12 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="carrito">Carrito</h4>
-          <button type="button" class= "btn btn-link btn-sm btn-clear" id="btn-clear" aria-label="Vaciar carrito">Vaciar carrito</button>
+          <h4 class="modal-title" id="carrito">Presupuesto</h4>
+          <button type="button" class= "btn btn-link btn-sm btn-clear" id="btn-clear" aria-label="Vaciar">Vaciar</button>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
         <div class="modal-body">
           <div id="pedido">
-            <p>El carrito está vacío</p>
             <!-- El Contenido del carrito se carga por JS -->
           </div>
           <div id="total">
@@ -96,7 +95,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="btn-cerrar-carrito" class="closed btn btn-primary">Pedir presupuesto</button>
+          <button type="button" id="btn-finalizar" class="closed btn btn-primary">Pedir presupuesto</button>
         </div>
       </div><!-- modal-content -->
     </div><!-- modal-dialog -->

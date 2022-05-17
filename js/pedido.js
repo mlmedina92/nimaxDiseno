@@ -30,7 +30,7 @@ function refrescarCarrito() {
   let total = 0;
 
   if(pedido.length == 0) {
-    carrito.innerHTML = "<p>El carrito está vacío</p>";
+    carrito.innerHTML = "<p>El presupuesto está vacío</p>";
     totalhtml.style.display = 'none';
     contadorCarrito.innerText = '';
   } else {
@@ -155,7 +155,7 @@ function cargarPedido() {
 let btnVaciar = document.getElementById(`btn-clear`);
 btnVaciar.addEventListener("click", () => {
   Swal.fire({
-    title: `¿Estás seguro de vaciar el carrito?`,
+    title: `¿Estás seguro de vaciar el presupuesto?`,
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -165,10 +165,25 @@ btnVaciar.addEventListener("click", () => {
   }).then((result) => {
     if (result.isConfirmed) {
       vaciarCarrito();
-      Swal.fire('Carrito vaciado con éxito');
+      Swal.fire('Presupuesto vaciado con éxito');
     }
   });
+});
+
+let btnFinalizar = document.getElementById(`btn-finalizar`);
+btnFinalizar.addEventListener("click", () => {
+  let txt = "Hola, me gustaría solicitar un presupuesto para:\n";
+  let total = 0;
+  pedido.forEach(function (itemPedido) {
+    txt += itemPedido.producto.nombre + ' x' + itemPedido.cantidad + ' $' + (itemPedido.producto.precio * itemPedido.cantidad) + '\n';
+    total += itemPedido.producto.precio * itemPedido.cantidad;
   });
+  txt += '-----------------\n';
+  txt += 'Total $' + total;
+
+  let url = 'https://wa.me/2494518737?text=' + encodeURIComponent(txt); // encodeURIComponent reemplaza los espacios y caracteres especiales codificados para ser enviados por parámetro en la url
+  window.open(url,'_blank'); // abrir una nueva pestaña con la url
+});
 
 cargarPedido();
 
