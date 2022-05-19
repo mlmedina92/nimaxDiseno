@@ -1,72 +1,72 @@
 [
     {
         "id": "p6",
-        "nombre": "Bombas para pisicinas",
+        "nombre": "Bombas para piscinas",
         "descripcion": "Disponibles en una gran variedad de modelos. Fabricadas con materiales de excelente calidad. Diseñadas para brindar la mejor relación presión-caudal del mercado, con el mejor rendimiento energético.",
         "precio": 123,
-        "imagen": "../img/products/bombas.jpg"
+        "imagen": "./img/products/bombas.jpg"
     },
     {
         "id": "p7",
         "nombre": "Equipos de filtración",
         "descripcion": "Los filtros de arena de cuarzo para piscinas tienen la funcionalidad de tratar físicamente el agua, eliminando las impurezas que se encuentran en la misma.",
         "precio": 123,
-        "imagen": "../img/products/filtracion.jpg"
+        "imagen": "./img/products/filtracion.jpg"
     },
     {
         "id": "p8",
         "nombre": "Accesorios de instalación",
         "descripcion": "Esta categoría agrupa todos los accesorios desarrollados para la instalación hidráulica de su piscina.",
         "precio": 123,
-        "imagen": "../img/products/instalacion.jpg"
+        "imagen": "./img/products/instalacion.jpg"
     },
     {
         "id": "p9",
         "nombre": "Decoración y confort",
         "descripcion": "En esta categoría encontramos productos que por su funcionalidad agregan confort, como así también aquellos destinados a destacar el atractivo de la piscina.",
         "precio": 123,
-        "imagen": "../img/products/decoracion.jpg"
+        "imagen": "./img/products/decoracion.jpg"
     },
     {
         "id": "p10",
-        "nombre": "iluminación",
+        "nombre": "Iluminación",
         "descripcion": "La gran variedad de luminarias para piscina ha sido desarrollada para realzar la belleza y extender el uso en horarios nocturnos para todo tipo de piscinas. ",
         "precio": 123,
-        "imagen": "../img/products/iluminacion.jpg"
+        "imagen": "./img/products/iluminacion.jpg"
     },
     {
         "id": "p11",
         "nombre": "Automatización de piscinas",
         "descripcion": "La tecnología de automatización está desarrollada para el accionamiento remoto de filtros, salidas auxiliares, luminarias y calefacción.",
         "precio": 123,
-        "imagen": "../img/products/automatizacion.jpg"
+        "imagen": "./img/products/automatizacion.jpg"
     },
     {
         "id": "p12",
-        "nombre": "Mantenimeinto y limpieza",
+        "nombre": "Mantenimiento y limpieza",
         "descripcion": "Esta categoría agrupa productos destinados al cuidado e higiene del agua su piscina para obtener un agua cristalina todo el año.",
         "precio": 123,
-        "imagen": "../img/products/mantenimiento.jpg"
+        "imagen": "./img/products/mantenimiento.jpg"
     },
     {
         "id": "p13",
-        "nombre": "Equipos de desinfeccion",
-        "descripcion": "Permitirán mantener el agua en óptimas condiciones a través de la eliminación de microorganismos resistentes a otros procesos químicos con efectos antiicrustantes, alguicidas, bacteriostáticos y estabilizadores de pH.",
+        "nombre": "Equipos de desinfección",
+        "descripcion": "Permitirán mantener el agua en óptimas condiciones a través de la eliminación de microorganismos resistentes a otros procesos químicos con efectos alguicidas, bacteriostáticos y estabilizadores de pH.",
         "precio": 123,
-        "imagen": "../img/products/decoracion.jpg"
+        "imagen": "./img/products/decoracion.jpg"
     },
     {
         "id": "p14",
         "nombre": "Productos químicos",
         "descripcion": "Desarrollados para el tratamiento y mantenimiento del agua de piscina. La completa variedad de productos y presentaciones permite adaptarse a todo tipo de necesidades.",
         "precio": 123,
-        "imagen": "../img/products/quimicos.jpg"
+        "imagen": "./img/products/quimicos.jpg"
     },
     {
         "id": "p15",
         "nombre": "Climaticación de piletas",
         "descripcion": "Productos utilizados para calefaccionar y medir la temperatura del agua de piscina.",
         "precio": 123,
-        "imagen": "../img/products/climatizacion.jpg"
+        "imagen": "./img/products/climatizacion.jpg"
     }
 ]
