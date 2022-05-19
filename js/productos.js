@@ -1,8 +1,8 @@
-//guardarpedido la llama la funcion listarproductos:
+//guardarpedido la llama la función listarproductos:
 import { guardarPedido } from "./pedido.js";
-import { getData } from "./getData.js"; // traigo los datos del json
+import { getData } from "./getData.js"; //traigo los datos del json
 
-//Función que me lista los elementos del div con id productos
+//Función que lista los elementos del div con id productos
 async function listarProductos() {
   let contenedorProductos = document.getElementById("productos");// del archivo productos.hmtl
 

@@ -9,5 +9,5 @@ const getData = async (jsonName) => {
     }
 }
 
-// exporto la funcion parausar en otro lado.
+// exporto la funcion para usar en otro lado.
 export { getData }

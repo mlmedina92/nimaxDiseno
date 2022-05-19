@@ -1,4 +1,4 @@
-// funcion de carrusel jqery
+// función de carrusel jqery
 $(".slider-nav").slick({
   arrows: false,
   slidesToShow: 3,

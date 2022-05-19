@@ -16,7 +16,7 @@ let pedido = [];// guardo cada objeto ItemPedido: objetos productos y sus cant.
 function refrescarCarrito() {
 //div del modal-body donde se va a guardar el contenido del carrito
   let carrito = document.getElementById("pedido");
-  carrito.innerHTML = "";  // borro todo el contenido que tiene dentro para actualizarlo
+  carrito.innerHTML = "";// borro todo el contenido que tiene dentro para actualizarlo
 
   let contadorCarrito = document.getElementById("contadorCarrito");
   let cant = 0;
@@ -136,7 +136,7 @@ function vaciarCarrito() {
   refrescarCarrito();
 }
 
-//Funcion cargarpedido desde lo que se guarde en el local storage
+//Funcion cargarpedido desde lo que guarde en local storage
 function cargarPedido() {
   //Vuelvo objeto al pedido que guarde en el localstorage "pedido"
   let pedidoJson = JSON.parse(localStorage.getItem("pedido")) ?? []; // operador nulish ??
@@ -184,7 +184,7 @@ btnFinalizar.addEventListener("click", () => {
   txt += "-----------------\n";
   txt += "Total $" + total;
 
-  let url = "https://wa.me/2494518737?text=" + encodeURIComponent(txt); // encodeURIComponent reemplaza espacios y caracteres especiales codificados para ser enviados por parámetro en la url.whatsapp.
+  let url = "https://wa.me/2494518737?text=" + encodeURIComponent(txt); //encodeURIComponent reemplaza espacios y caracteres especiales para ser enviados por parámetro en la url.whatsapp.
   window.open(url, "_blank"); // abrir nueva pestaña con la url
 });
 
