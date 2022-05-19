@@ -64,7 +64,7 @@
     },
     {
         "id": "p15",
-        "nombre": "Climaticación de piletas",
+        "nombre": "Climatización de piletas",
         "descripcion": "Productos utilizados para calefaccionar y medir la temperatura del agua de piscina.",
         "precio": 123,
         "imagen": "./img/products/climatizacion.jpg"
