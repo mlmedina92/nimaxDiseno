@@ -5,9 +5,7 @@ class ItemPedido {
     this.producto = producto;
     this.cantidad = cantidad;
   }
-  obtenerSubtotal() {
-    return this.producto.precio * this.cantidad;
-  }
+ 
 }
 
 let pedido = [];// guardo cada objeto ItemPedido: objetos productos y sus cant.
@@ -21,12 +19,8 @@ function refrescarCarrito() {
   let contadorCarrito = document.getElementById("contadorCarrito");
   let cant = 0;
 
-  let totalhtml = document.getElementById("total");
-  let total = 0;
-
   if (pedido.length == 0) {
     carrito.innerHTML = "<p>El presupuesto está vacío</p>";
-    totalhtml.style.display = "none";
     contadorCarrito.innerText = "";
   } else {
 //For each recorro el arreglo pedido uno a uno cada itemPedido y voy generando html de los pedidos, el contenido del carrito
@@ -55,21 +49,12 @@ function refrescarCarrito() {
                       </div>  
                     </div>
                     <div class="row">
-                      <div class="col-4">
-                        <p class="card-text">$${itemPedido.producto.precio}</p>
-                      </div>
-                      <div class="col-4">
+                      <div class="col-12">
                         <p class="card-text">x${itemPedido.cantidad}</p>
-                      </div>
-                      <div class="col-4 text-end px-0 mx-0">
-                        <p class="card-text">$${itemPedido.obtenerSubtotal()}</p>
                       </div>
                     </div>
                 </div>
               </div>`;
-
-//total sumo los subtotales de cada prod: producto.precio*cantidad de un itemPedido. Llamo al metodo obtener subtotal de la clase itemPedido
-      total += itemPedido.obtenerSubtotal();
       cant += itemPedido.cantidad;
     });
 
@@ -96,10 +81,6 @@ function refrescarCarrito() {
         });
       });
     });
-
-    totalhtml.innerHTML = `<p class="text-end px-0 mx-0 fs-4  text">TOTAL $<strong>${total}</strong></p>`;
-    totalhtml.style.display = "block";
-
     contadorCarrito.innerText = cant; //actualizamos con la cantidad total de items en el carrito.
   }
 }
@@ -170,19 +151,13 @@ btnVaciar.addEventListener("click", () => {
 let btnFinalizar = document.getElementById(`btn-finalizar`);
 btnFinalizar.addEventListener("click", () => {
   let txt = "Hola, me gustaría solicitar un presupuesto para:\n";
-  let total = 0;
   pedido.forEach(function (itemPedido) {
     txt +=
       itemPedido.producto.nombre +
       " x" +
-      itemPedido.cantidad +
-      " $" +
-      itemPedido.producto.precio * itemPedido.cantidad +
-      "\n";
-    total += itemPedido.producto.precio * itemPedido.cantidad;
+      itemPedido.cantidad;
   });
-  txt += "-----------------\n";
-  txt += "Total $" + total;
+  
 
   let url = "https://wa.me/2494518737?text=" + encodeURIComponent(txt); //encodeURIComponent reemplaza espacios y caracteres especiales para ser enviados por parámetro en la url.whatsapp.
   window.open(url, "_blank"); // abrir nueva pestaña con la url

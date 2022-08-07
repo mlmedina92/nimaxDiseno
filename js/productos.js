@@ -13,7 +13,7 @@ async function listarProductos() {
 
 //for each recorre uno a uno cada producto del array productos que traje del JSON, para crear elementos html (cards que muestran CADA producto)
   productos.forEach(producto => { // Desestructuracion para acceder a prop de c/ obj producto
-    let { imagen, precio, id, nombre,descripcion } = producto;
+    let { imagen, id, nombre,descripcion } = producto;
 //+= es para concatenar al contenido de contenerdorProductos con cada card:
     contenedorProductos.innerHTML += `<div class="col p-2 m-0">
                                         <div class="card border rounded">
@@ -23,7 +23,6 @@ async function listarProductos() {
                                             <p class="card-text">${descripcion}</p>
                                           </div>
                                             <div class="card-footer p-3">
-                                              <p class="card-text"><strong>$${precio}</strong></p>
                                               <div class="container p-0">
                                                 <div class="row align-items-end">
                                                   <div class="col-4 pe-0">
